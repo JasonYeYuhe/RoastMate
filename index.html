@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>RoastMate AI — On-device AI for witty, safe self-expression</title>
-<meta name="description" content="RoastMate is an on-device AI creative writing tool for turning frustration into clever, safe expression. iOS, iPadOS, macOS, watchOS.">
+<meta name="description" content="RoastMate is a private-first AI creative writing tool for turning frustration into clever, safe expression. Most modes run on-device; Vent and Feral use an optional cloud proxy you can disable. iOS, iPadOS, macOS, watchOS.">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -23,10 +23,11 @@
 <main>
   <section class="hero">
     <div class="container">
-      <h1>On-device AI for witty,<br>safe self-expression.</h1>
+      <h1>Vent first,<br>then send the version that wins.</h1>
       <p class="lead">
-        RoastMate turns frustration into clever, safe replies — entirely on your device.
-        Describe a situation, pick a style, get a reply you'd actually send.
+        RoastMate turns frustration into clever, safe replies. Most modes run on-device
+        with Apple's Foundation Models; Vent and Feral private drafts use an optional cloud
+        proxy for stronger output. Describe a situation, pick a style, get a reply you'd actually send.
       </p>
       <p class="platforms">iPhone · iPad · Mac · Apple Watch</p>
       <p class="cta-note">App Store listing coming soon.</p>
@@ -67,16 +68,18 @@
 
   <section id="privacy" class="privacy-pitch">
     <div class="container">
-      <h2>Built private. By design.</h2>
+      <h2>Private by default.</h2>
       <p>
-        All AI generation runs on your device using Apple's Foundation Models framework.
-        No OpenAI, no Anthropic, no Google, no analytics SDK.
-        Your situations don't leave your iPhone, iPad, Mac, or Apple Watch.
+        Calm, Sharp, Savage and the "Make it sendable" rewrite run entirely on your device
+        using Apple's Foundation Models framework — that text never leaves your iPhone, iPad,
+        Mac, or Apple Watch, and works in Airplane Mode.
       </p>
       <p>
-        Sign in with Apple is <strong>optional</strong>; iCloud sync (when you enable it) goes
-        through your private CloudKit database — Apple's standard, end-to-end-encrypted account-bound storage.
-        We don't operate a server. Verify by enabling Airplane Mode — generation still works.
+        Vent and Feral private drafts route through a developer-owned cloud proxy by default
+        (Apple's on-device model is too gentle for real venting). Our proxy doesn't keep a copy
+        of your text; you can switch Vent / Feral to local in
+        <strong>Settings → AI &amp; Privacy</strong>. No analytics SDK, no advertising IDs.
+        Sign in with Apple is optional.
       </p>
       <p><a class="link" href="privacy.html">Read the full privacy policy →</a></p>
     </div>
@@ -93,7 +96,7 @@
 
 <footer>
   <div class="container">
-    <p>© 2026 Yuhe Ye. Made with Apple's on-device AI.</p>
+    <p>© 2026 Yuhe Ye. On-device by default; Vent / Feral can use an optional cloud proxy.</p>
     <p>
       <a href="privacy.html">Privacy Policy</a> ·
       <a href="support.html">Support</a> ·

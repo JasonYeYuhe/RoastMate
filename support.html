@@ -38,7 +38,7 @@
     <p>RoastMate AI on the free tier allows 5 generations per day. The counter resets at local midnight. Upgrade to Pro for unlimited generations.</p>
 
     <h3>Does my text leave my device?</h3>
-    <p>No. All AI generation runs on your device via Apple's Foundation Models framework. Enabling Airplane Mode is a good way to confirm: the generator continues to work. See our <a href="privacy.html">Privacy Policy</a> for the full picture.</p>
+    <p>It depends on the intensity. Calm, Sharp, Savage and the "Make it sendable" rewrite run entirely on your device via Apple's Foundation Models — that text never leaves the device and works in Airplane Mode. Vent and Feral private drafts route through a developer-owned cloud proxy by default (Apple's on-device model won't produce real venting); the situation text plus an anonymous per-install device ID are sent for inference and our proxy keeps no copy. You can switch Vent / Feral to local in <em>Settings → AI &amp; Privacy → Stronger Vent / Feral (Cloud AI)</em>. See our <a href="privacy.html">Privacy Policy</a> for the full data-flow.</p>
 
     <h3>How do I cancel my subscription?</h3>
     <p>Open the App Store app on your iPhone → tap your profile picture → tap "Subscriptions" → tap "RoastMate Pro" → tap "Cancel Subscription". Apple handles all subscription billing.</p>
@@ -55,8 +55,8 @@
     <h3>I want to delete everything.</h3>
     <p>In the app: <em>Settings → History → Clear all</em>. To also wipe the iCloud copy: iPhone Settings → [Your Name] → iCloud → Manage Storage → RoastMate AI → Delete from iCloud. Uninstalling the app removes the on-device store.</p>
 
-    <h3>I'm a journalist / security researcher / parent — how do I verify the safety claims?</h3>
-    <p>Email us at the address above and we'll walk you through the on-device generation flow. Quick verification you can do yourself: enable Airplane Mode, then use the Roast Generator. It will continue to produce output, confirming nothing is being fetched from a server.</p>
+    <h3>I'm a journalist / security researcher / parent — how do I verify the privacy claims?</h3>
+    <p>To verify the local-only path: open <em>Settings → AI &amp; Privacy</em> and turn off "Stronger Vent / Feral (Cloud AI)", then enable Airplane Mode. Every intensity will continue to produce output, confirming nothing is fetched from a server. With Cloud AI on (the default), Vent and Feral send the situation text to our Cloudflare Worker; the Privacy Policy describes exactly what is sent and what is (not) retained. Email us at the address above for anything further.</p>
 
     <h2>Known issues</h2>
     <p>We'll list known issues here once we have public users. None at this time.</p>
@@ -65,7 +65,7 @@
 
 <footer>
   <div class="container">
-    <p>© 2026 Yuhe Ye. Made with Apple's on-device AI.</p>
+    <p>© 2026 Yuhe Ye. On-device by default; Vent / Feral can use an optional cloud proxy.</p>
     <p>
       <a href="./">Home</a> ·
       <a href="privacy.html">Privacy Policy</a> ·
