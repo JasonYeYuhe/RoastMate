@@ -12,6 +12,7 @@
   <nav class="container nav">
     <a href="./" class="brand">RoastMate AI</a>
     <ul class="nav-links">
+      <li><a href="#try">Try it</a></li>
       <li><a href="#features">Features</a></li>
       <li><a href="#privacy">Privacy</a></li>
       <li><a href="support.html">Support</a></li>
@@ -30,7 +31,25 @@
         proxy for stronger output. Describe a situation, pick a style, get a reply you'd actually send.
       </p>
       <p class="platforms">iPhone · iPad · Mac · Apple Watch</p>
-      <p class="cta-note">App Store listing coming soon.</p>
+      <p class="cta-note"><a class="link" href="https://apps.apple.com/app/id6769317103">Download on the App Store →</a></p>
+    </div>
+  </section>
+
+  <section class="tryit" id="try">
+    <div class="container">
+      <h2>Try it now</h2>
+      <p class="tryit-sub">Type something that annoyed you. Same engine the app uses — no sign-up.</p>
+      <textarea id="tryInput" rows="3" maxlength="600"
+        placeholder="e.g. My coworker took credit for my work in front of the whole team…"></textarea>
+      <div class="tryit-row">
+        <div class="tone-toggle" role="group" aria-label="Tone">
+          <button type="button" class="tone-btn is-active" data-tone="vent">Vent</button>
+          <button type="button" class="tone-btn" data-tone="feral">Feral</button>
+        </div>
+        <button type="button" id="tryBtn" class="btn-accent">Roast it →</button>
+      </div>
+      <div id="tryOut" class="tryit-out" hidden></div>
+      <p class="tryit-note">Drafts are for venting — the app's one-tap rewrite turns them into something you'd actually send. A few free tries per day.</p>
     </div>
   </section>
 
@@ -104,5 +123,57 @@
     </p>
   </div>
 </footer>
+
+<script>
+(function () {
+  var WORKER = "https://roastmate-vent.yyyyy-yeyuhe.workers.dev/v1/vent";
+  var input = document.getElementById("tryInput");
+  var btn = document.getElementById("tryBtn");
+  var out = document.getElementById("tryOut");
+  var tone = "vent";
+  document.querySelectorAll(".tone-btn").forEach(function (b) {
+    b.addEventListener("click", function () {
+      document.querySelectorAll(".tone-btn").forEach(function (x) { x.classList.remove("is-active"); });
+      b.classList.add("is-active");
+      tone = b.getAttribute("data-tone");
+    });
+  });
+  function deviceId() {
+    try {
+      var k = "rm_demo_id", v = localStorage.getItem(k);
+      if (!v) { v = "web-" + (crypto.randomUUID ? crypto.randomUUID() : Math.random().toString(36).slice(2) + Date.now()); localStorage.setItem(k, v); }
+      return v;
+    } catch (e) { return "web-" + Math.random().toString(36).slice(2) + Date.now(); }
+  }
+  function locale() {
+    var l = (navigator.language || "en").toLowerCase();
+    if (l.indexOf("zh") === 0) return "zh-Hans";
+    if (l.indexOf("ja") === 0) return "ja";
+    return "en";
+  }
+  btn.addEventListener("click", async function () {
+    var situation = (input.value || "").trim();
+    if (situation.length < 3) { input.focus(); return; }
+    btn.disabled = true;
+    var label = btn.textContent;
+    btn.textContent = "Roasting…";
+    out.hidden = false; out.className = "tryit-out is-loading"; out.textContent = "…";
+    try {
+      var r = await fetch(WORKER, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ situation: situation, intensity: tone, locale: locale(), deviceId: deviceId() })
+      });
+      var d = await r.json().catch(function () { return {}; });
+      if (r.ok && d.text) { out.className = "tryit-out"; out.textContent = d.text; }
+      else if (r.status === 429) { out.className = "tryit-out is-error"; out.textContent = "You've used today's free tries. Grab the app for unlimited — link above."; }
+      else { out.className = "tryit-out is-error"; out.textContent = "Hmm, that didn't go through. Give it another go in a moment."; }
+    } catch (e) {
+      out.className = "tryit-out is-error"; out.textContent = "Network hiccup — try again.";
+    }
+    btn.disabled = false; btn.textContent = label;
+  });
+})();
+</script>
 </body>
 </html>
