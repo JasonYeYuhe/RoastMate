@@ -12,11 +12,11 @@
   <nav class="container nav">
     <a href="./" class="brand">RoastMate AI</a>
     <ul class="nav-links">
-      <li><a href="#try">Try it</a></li>
-      <li><a href="#features">Features</a></li>
-      <li><a href="#privacy">Privacy</a></li>
-      <li><a href="support.html">Support</a></li>
-      <li><a href="privacy.html">Privacy Policy</a></li>
+      <li><a href="#try" data-i18n="nav.try">Try it</a></li>
+      <li><a href="#features" data-i18n="nav.features">Features</a></li>
+      <li><a href="#privacy" data-i18n="nav.privacy">Privacy</a></li>
+      <li><a href="support.html" data-i18n="nav.support">Support</a></li>
+      <li><button id="langToggle" class="lang-toggle" type="button">中文</button></li>
     </ul>
   </nav>
 </header>
@@ -24,102 +24,84 @@
 <main>
   <section class="hero">
     <div class="container">
-      <h1>Vent first,<br>then send the version that wins.</h1>
-      <p class="lead">
+      <h1 data-i18n="hero.h1">Vent first,<br>then send the version that wins.</h1>
+      <p class="lead" data-i18n="hero.lead">
         RoastMate turns frustration into clever, safe replies. Most modes run on-device
         with Apple's Foundation Models; Vent and Feral private drafts use an optional cloud
         proxy for stronger output. Describe a situation, pick a style, get a reply you'd actually send.
       </p>
       <p class="platforms">iPhone · iPad · Mac · Apple Watch</p>
-      <p class="cta-note"><a class="link" href="https://apps.apple.com/app/id6769317103">Download on the App Store →</a></p>
+      <p class="cta-note"><a class="link" href="https://apps.apple.com/app/id6769317103" data-i18n="hero.cta">Download on the App Store →</a></p>
     </div>
   </section>
 
   <section class="tryit" id="try">
     <div class="container">
-      <h2>Try it now</h2>
-      <p class="tryit-sub">Type something that annoyed you. Same engine the app uses — no sign-up.</p>
-      <textarea id="tryInput" rows="3" maxlength="600"
+      <h2 data-i18n="try.h2">Try it now</h2>
+      <p class="tryit-sub" data-i18n="try.sub">Type something that annoyed you. Same engine the app uses — no sign-up.</p>
+      <textarea id="tryInput" rows="3" maxlength="600" data-i18n-ph="try.ph"
         placeholder="e.g. My coworker took credit for my work in front of the whole team…"></textarea>
       <div class="tryit-row">
         <div class="tone-toggle" role="group" aria-label="Tone">
-          <button type="button" class="tone-btn is-active" data-tone="vent">Vent</button>
-          <button type="button" class="tone-btn" data-tone="feral">Feral</button>
+          <button type="button" class="tone-btn is-active" data-tone="vent" data-i18n="tone.vent">Vent</button>
+          <button type="button" class="tone-btn" data-tone="feral" data-i18n="tone.feral">Feral</button>
         </div>
-        <button type="button" id="tryBtn" class="btn-accent">Roast it →</button>
+        <button type="button" id="tryBtn" class="btn-accent" data-i18n="try.btn">Roast it →</button>
       </div>
       <div id="tryOut" class="tryit-out" hidden></div>
-      <p class="tryit-note">Drafts are for venting — the app's one-tap rewrite turns them into something you'd actually send. A few free tries per day.</p>
+      <p class="tryit-note" data-i18n="try.note">Drafts are for venting — the app's one-tap rewrite turns them into something you'd actually send. A few free tries per day.</p>
     </div>
   </section>
 
   <section id="features" class="features">
     <div class="container">
-      <h2>What it does</h2>
+      <h2 data-i18n="feat.h2">What it does</h2>
       <ul class="feature-grid">
-        <li>
-          <h3>20+ writing styles</h3>
-          <p>Polite, Passive-Aggressive, Japanese Keigo, Literary, Stand-up, MBA Buzzword, Shakespearean, and more.</p>
-        </li>
-        <li>
-          <h3>Reply Helper</h3>
-          <p>Paste a message you received, get suggested replies that match your chosen tone.</p>
-        </li>
-        <li>
-          <h3>Argument Simulator (Pro)</h3>
-          <p>Rehearse a tough conversation. AI plays the other side so you walk in ready.</p>
-        </li>
-        <li>
-          <h3>Apple Watch quick roast</h3>
-          <p>Vent on your wrist; hand off to iPhone when you want to read or share.</p>
-        </li>
-        <li>
-          <h3>macOS menu bar</h3>
-          <p>One keyboard shortcut from any app — type, generate, copy.</p>
-        </li>
-        <li>
-          <h3>Share Extension</h3>
-          <p>Roast text from Mail, Messages, Safari — anywhere iOS shows the Share menu.</p>
-        </li>
+        <li><h3 data-i18n="feat.1.h">20+ writing styles</h3><p data-i18n="feat.1.p">Polite, Passive-Aggressive, Japanese Keigo, Literary, Stand-up, MBA Buzzword, Shakespearean, and more.</p></li>
+        <li><h3 data-i18n="feat.2.h">Reply Helper</h3><p data-i18n="feat.2.p">Paste a message you received, get suggested replies that match your chosen tone.</p></li>
+        <li><h3 data-i18n="feat.3.h">Argument Simulator (Pro)</h3><p data-i18n="feat.3.p">Rehearse a tough conversation. AI plays the other side so you walk in ready.</p></li>
+        <li><h3 data-i18n="feat.4.h">Apple Watch quick roast</h3><p data-i18n="feat.4.p">Vent on your wrist; hand off to iPhone when you want to read or share.</p></li>
+        <li><h3 data-i18n="feat.5.h">macOS menu bar</h3><p data-i18n="feat.5.p">One keyboard shortcut from any app — type, generate, copy.</p></li>
+        <li><h3 data-i18n="feat.6.h">Share Extension</h3><p data-i18n="feat.6.p">Roast text from Mail, Messages, Safari — anywhere iOS shows the Share menu.</p></li>
       </ul>
     </div>
   </section>
 
   <section id="privacy" class="privacy-pitch">
     <div class="container">
-      <h2>Private by default.</h2>
-      <p>
+      <h2 data-i18n="priv.h2">Private by default.</h2>
+      <p data-i18n="priv.p1">
         Calm, Sharp, Savage and the "Make it sendable" rewrite run entirely on your device
         using Apple's Foundation Models framework — that text never leaves your iPhone, iPad,
         Mac, or Apple Watch, and works in Airplane Mode.
       </p>
-      <p>
+      <p data-i18n="priv.p2">
         Vent and Feral private drafts route through a developer-owned cloud proxy by default
         (Apple's on-device model is too gentle for real venting). Our proxy doesn't keep a copy
         of your text; you can switch Vent / Feral to local in
         <strong>Settings → AI &amp; Privacy</strong>. No analytics SDK, no advertising IDs.
         Sign in with Apple is optional.
       </p>
-      <p><a class="link" href="privacy.html">Read the full privacy policy →</a></p>
+      <p><a class="link" href="privacy.html" data-i18n="priv.link">Read the full privacy policy →</a></p>
     </div>
   </section>
 
   <section class="cta">
     <div class="container">
-      <h2>Available in</h2>
+      <h2 data-i18n="cta.h2">Available in</h2>
       <p>English · 简体中文 · 繁體中文 · 日本語</p>
-      <p class="cta-note">Free tier: 5 generations per day. Pro: unlimited + all 20+ styles, $2.99/month or $19.99/year with a 7-day free trial.</p>
+      <p class="cta-note" data-i18n="cta.note">Free tier: 5 generations per day. Pro: unlimited + all 20+ styles, $2.99/month or $19.99/year with a 7-day free trial.</p>
     </div>
   </section>
 </main>
 
 <footer>
   <div class="container">
-    <p>© 2026 Yuhe Ye. On-device by default; Vent / Feral can use an optional cloud proxy.</p>
+    <p data-i18n="foot.copy">© 2026 Yuhe Ye. On-device by default; Vent / Feral can use an optional cloud proxy.</p>
     <p>
-      <a href="privacy.html">Privacy Policy</a> ·
-      <a href="support.html">Support</a> ·
-      <a href="mailto:yyyyy.yeyuhe@icloud.com">Contact</a>
+      <a href="privacy.html" data-i18n="nav.policy">Privacy Policy</a> ·
+      <a href="support.html" data-i18n="nav.support">Support</a> ·
+      <a href="mailto:yyyyy.yeyuhe@icloud.com" data-i18n="foot.contact">Contact</a>
     </p>
   </div>
 </footer>
@@ -127,6 +109,66 @@
 <script>
 (function () {
   var WORKER = "https://roastmate-vent.yyyyy-yeyuhe.workers.dev/v1/vent";
+
+  // ── i18n ──────────────────────────────────────────────────────
+  var ZH = {
+    "nav.try": "试一下", "nav.features": "功能", "nav.privacy": "隐私", "nav.support": "支持", "nav.policy": "隐私政策",
+    "hero.h1": "先骂个爽,<br>再发那条能赢的。",
+    "hero.lead": "RoastMate 把憋屈变成机智、安全、能直接发出去的回复。大多数模式用 Apple 端侧大模型在本地运行;发泄和火力全开的私密草稿走可选云端、更带劲。描述一件事、选个语气,拿到一条你真敢发的回复。",
+    "hero.cta": "前往 App Store 下载 →",
+    "try.h2": "现在就试试", "try.sub": "把让你不爽的事打出来。和 app 同一个引擎,免注册。",
+    "try.ph": "比如:同事把我做的方案署上他自己的名字交给老板…",
+    "tone.vent": "发泄", "tone.feral": "火力全开", "try.btn": "开骂 →",
+    "try.note": "草稿是用来发泄的 —— app 一键改写成你真能发出去的版本。每天有几次免费试用。",
+    "feat.h2": "能做什么",
+    "feat.1.h": "20+ 种文风", "feat.1.p": "高情商、阴阳怪气、日语敬语、文言文、脱口秀、MBA 黑话、莎士比亚体,等等。",
+    "feat.2.h": "回复助手", "feat.2.p": "把收到的消息贴进来,按你选的语气给出建议回复。",
+    "feat.3.h": "吵架模拟器(Pro)", "feat.3.p": "预演一场难搞的对话。AI 扮演对方,让你有备而来。",
+    "feat.4.h": "Apple Watch 快速开骂", "feat.4.p": "在手腕上发泄;想细看或分享时接力到 iPhone。",
+    "feat.5.h": "macOS 菜单栏", "feat.5.p": "任意 app 里一个快捷键 —— 输入、生成、复制。",
+    "feat.6.h": "共享扩展", "feat.6.p": "在邮件、信息、Safari —— 任何能调出共享菜单的地方开骂。",
+    "priv.h2": "默认隐私优先。",
+    "priv.p1": "冷静、犀利、毒舌,以及「改成能发的」改写,全部在你的设备上、用 Apple 端侧大模型运行 —— 这些文字从不离开你的 iPhone、iPad、Mac 或 Apple Watch,飞行模式也能用。",
+    "priv.p2": "发泄和火力全开的私密草稿默认走开发者自有的云端代理(Apple 端侧模型对真正的发泄太温柔了)。我们的代理不保留你的文本副本;你可以在 <strong>设置 → AI 与隐私</strong> 里把发泄/火力全开切回本地。无分析 SDK、无广告标识符。登录 Apple 账户是可选的。",
+    "priv.link": "阅读完整隐私政策 →",
+    "cta.h2": "支持语言",
+    "cta.note": "免费版:每天 5 次生成。Pro:无限次 + 全部 20+ 文风,$2.99/月 或 $19.99/年,含 7 天免费试用。",
+    "foot.copy": "© 2026 Yuhe Ye。默认端侧运行;发泄/火力全开可用可选云端代理。",
+    "foot.contact": "联系"
+  };
+  var EN = {};
+  document.querySelectorAll("[data-i18n]").forEach(function (el) {
+    var k = el.getAttribute("data-i18n");
+    if (!(k in EN)) EN[k] = el.innerHTML;
+  });
+  var phEN = {};
+  document.querySelectorAll("[data-i18n-ph]").forEach(function (el) {
+    phEN[el.getAttribute("data-i18n-ph")] = el.getAttribute("placeholder");
+  });
+  var lang = "en";
+  function applyLang(l) {
+    lang = (l === "zh") ? "zh" : "en";
+    document.querySelectorAll("[data-i18n]").forEach(function (el) {
+      var k = el.getAttribute("data-i18n");
+      var v = (lang === "zh") ? (ZH[k] != null ? ZH[k] : EN[k]) : EN[k];
+      if (v != null) el.innerHTML = v;
+    });
+    document.querySelectorAll("[data-i18n-ph]").forEach(function (el) {
+      var k = el.getAttribute("data-i18n-ph");
+      el.setAttribute("placeholder", lang === "zh" ? (ZH[k] || phEN[k]) : phEN[k]);
+    });
+    document.documentElement.setAttribute("lang", lang === "zh" ? "zh-Hans" : "en");
+    var t = document.getElementById("langToggle");
+    if (t) t.textContent = lang === "zh" ? "EN" : "中文";
+    try { localStorage.setItem("rm_lang", lang); } catch (e) {}
+  }
+  var saved; try { saved = localStorage.getItem("rm_lang"); } catch (e) {}
+  var initial = saved || ((navigator.language || "en").toLowerCase().indexOf("zh") === 0 ? "zh" : "en");
+  applyLang(initial);
+  var toggle = document.getElementById("langToggle");
+  if (toggle) toggle.addEventListener("click", function () { applyLang(lang === "zh" ? "en" : "zh"); });
+
+  // ── Demo ──────────────────────────────────────────────────────
   var input = document.getElementById("tryInput");
   var btn = document.getElementById("tryBtn");
   var out = document.getElementById("tryOut");
@@ -145,31 +187,36 @@
       return v;
     } catch (e) { return "web-" + Math.random().toString(36).slice(2) + Date.now(); }
   }
-  function locale() {
-    var l = (navigator.language || "en").toLowerCase();
-    if (l.indexOf("zh") === 0) return "zh-Hans";
-    if (l.indexOf("ja") === 0) return "ja";
-    return "en";
+  var MSG = {
+    roasting: { en: "Roasting…", zh: "开骂中…" },
+    limit: { en: "You've used today's free tries. Grab the app for unlimited — link above.", zh: "今天的免费次数用完了。下载 app 可无限使用 —— 链接在上方。" },
+    fail: { en: "Hmm, that didn't go through. Give it another go in a moment.", zh: "没发出去,稍等片刻再试一次。" },
+    net: { en: "Network hiccup — try again.", zh: "网络出了点问题 —— 再试一次。" }
+  };
+  function msg(k) { return MSG[k][lang === "zh" ? "zh" : "en"]; }
+  function workerLocale() {
+    if (lang === "zh") return "zh-Hans";
+    return (navigator.language || "en").toLowerCase().indexOf("ja") === 0 ? "ja" : "en";
   }
   btn.addEventListener("click", async function () {
     var situation = (input.value || "").trim();
     if (situation.length < 3) { input.focus(); return; }
     btn.disabled = true;
     var label = btn.textContent;
-    btn.textContent = "Roasting…";
+    btn.textContent = msg("roasting");
     out.hidden = false; out.className = "tryit-out is-loading"; out.textContent = "…";
     try {
       var r = await fetch(WORKER, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ situation: situation, intensity: tone, locale: locale(), deviceId: deviceId() })
+        body: JSON.stringify({ situation: situation, intensity: tone, locale: workerLocale(), deviceId: deviceId() })
       });
       var d = await r.json().catch(function () { return {}; });
       if (r.ok && d.text) { out.className = "tryit-out"; out.textContent = d.text; }
-      else if (r.status === 429) { out.className = "tryit-out is-error"; out.textContent = "You've used today's free tries. Grab the app for unlimited — link above."; }
-      else { out.className = "tryit-out is-error"; out.textContent = "Hmm, that didn't go through. Give it another go in a moment."; }
+      else if (r.status === 429) { out.className = "tryit-out is-error"; out.textContent = msg("limit"); }
+      else { out.className = "tryit-out is-error"; out.textContent = msg("fail"); }
     } catch (e) {
-      out.className = "tryit-out is-error"; out.textContent = "Network hiccup — try again.";
+      out.className = "tryit-out is-error"; out.textContent = msg("net");
     }
     btn.disabled = false; btn.textContent = label;
   });

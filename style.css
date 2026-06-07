@@ -304,3 +304,10 @@ footer a:hover {
 .tryit-out.is-loading { color: var(--fg-soft); }
 .tryit-out.is-error { color: var(--accent); }
 .tryit-note { font-size: 13px; color: var(--fg-soft); margin: 12px 0 0; }
+
+.lang-toggle {
+  border: 1px solid var(--border); background: transparent; color: var(--fg-soft);
+  font-family: inherit; font-size: 13px; font-weight: 600;
+  padding: 5px 13px; border-radius: 999px; cursor: pointer; line-height: 1;
+}
+.lang-toggle:hover { color: var(--fg); border-color: var(--fg-soft); }
