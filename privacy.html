@@ -21,7 +21,7 @@
 <main class="page">
   <div class="container">
     <h1>Privacy Policy</h1>
-    <p class="last-updated">Last updated: May 15, 2026</p>
+    <p class="last-updated">Last updated: September 1, 2026</p>
 
     <h2>The short version</h2>
     <ul>
@@ -39,9 +39,9 @@
       No part of that text is transmitted to RoastMate AI or to any third party. These paths work in Airplane Mode.
     </p>
     <p>
-      Generated responses are stored locally on your device in a SwiftData store inside the app's
-      shared App Group container (<code>group.yyh.roastmate.app</code>). You can clear this history
-      at any time from <em>Settings → Clear sample data</em> or by deleting individual entries.
+      Generated responses are stored on your device in a SwiftData store, and — if you are signed in
+      to iCloud — mirrored to your own private iCloud database (see section 3). You can clear this
+      history at any time from <em>Settings → Clear sample data</em> or by deleting individual entries.
     </p>
 
     <h2>1a. Cloud generation (Vent / Feral)</h2>
@@ -74,12 +74,20 @@
       <li>You can sign out at any time from <em>Settings → Account → Sign Out</em>. Your local data and iCloud-synced data remain.</li>
     </ul>
 
-    <h2>3. iCloud sync (optional)</h2>
+    <h2>3. iCloud sync</h2>
     <p>
-      When iCloud sync is enabled, your roast History and Settings are stored in your private
-      CloudKit database under your own iCloud account. This sync uses Apple's infrastructure; we
-      do not operate or have access to any server that holds your content. Disabling iCloud Drive
-      for RoastMate AI in iOS Settings → [Your Name] → iCloud will stop sync.
+      If you are signed in to iCloud, your history syncs across your devices through your own
+      private iCloud database (CloudKit container <code>iCloud.yyh.roastmate.app</code>). To be
+      explicit about what that covers, because the wording here used to be vaguer than it should
+      have been: it includes your roast history <strong>and your private Vent and Feral
+      drafts</strong>, along with threads, saved situations, settings, and credit-ledger entries.
+    </p>
+    <p>
+      This is <strong>your</strong> iCloud storage, not ours. The sync uses Apple's infrastructure;
+      we do not operate, and cannot access, any server that holds this content, and none of it is
+      ever sent to us. There is no in-app switch for it — it follows your device's iCloud state.
+      Signing out of iCloud, or turning off iCloud Drive for RoastMate AI in
+      iOS Settings → [Your Name] → iCloud, stops it.
     </p>
 
     <h2>4. App Store Connect "Privacy Nutrition Label"</h2>
@@ -89,6 +97,7 @@
       <li><strong>Device ID</strong> — an opaque per-install UUID sent with Vent / Feral cloud requests for rate limiting. Purpose: App Functionality. Linked to user: <strong>No</strong>. Used for tracking: <strong>No</strong>.</li>
       <li><strong>User ID</strong> — when you sign in with Apple. Purpose: App Functionality. Linked to user: Yes. Used for tracking: <strong>No</strong>.</li>
       <li><strong>Name</strong> — only if you choose to share it during Sign in with Apple. Purpose: App Functionality. Linked to user: Yes. Used for tracking: <strong>No</strong>.</li>
+      <li><strong>Purchases</strong> — if you subscribe to Pro, the app sends the Apple-signed StoreKit transaction receipt to our Cloudflare Worker so it can confirm the subscription is genuine and grant the higher cloud quota. It identifies the transaction only; it carries no name, email, or payment details. Purpose: App Functionality. Linked to user: <strong>No</strong>. Used for tracking: <strong>No</strong>.</li>
     </ul>
     <p>We do <strong>not</strong> collect: location, financial info, health &amp; fitness, sensitive info, contacts, search history, browsing history, identifiers beyond those listed above, usage analytics, advertising IDs, or any content beyond the Vent / Feral request you explicitly send to the cloud (which you can disable).</p>
 
