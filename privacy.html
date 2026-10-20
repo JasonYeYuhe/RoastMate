@@ -21,7 +21,7 @@
 <main class="page">
   <div class="container">
     <h1>Privacy Policy</h1>
-    <p class="last-updated">Last updated: September 1, 2026</p>
+    <p class="last-updated">Last updated: October 20, 2026</p>
 
     <h2>The short version</h2>
     <ul>
@@ -50,8 +50,9 @@
       Cloudflare Worker we operate: the situation text you typed, the chosen intensity
       (<code>vent</code> or <code>feral</code>), the style name, your UI locale, and an opaque
       per-install UUID used only to enforce a per-device daily rate limit. The Worker builds the
-      prompt server-side and forwards the request to a third-party LLM provider (currently Groq,
-      with OpenRouter as a fallback; we may change providers in the future without further notice).
+      prompt server-side and forwards the request to a third-party LLM provider (currently OpenRouter,
+      which passes it to a hosting provider for the selected model; we may change providers in the
+      future without further notice).
     </p>
     <p>
       Our Worker does not retain a copy of your request text or the generated response — it stores
@@ -102,7 +103,7 @@
     <p>We do <strong>not</strong> collect: location, financial info, health &amp; fitness, sensitive info, contacts, search history, browsing history, identifiers beyond those listed above, usage analytics, advertising IDs, or any content beyond the Vent / Feral request you explicitly send to the cloud (which you can disable).</p>
 
     <h2>5. Third parties</h2>
-    <p>RoastMate AI integrates no analytics SDK and no advertising SDK. For the Vent / Feral cloud path, the request is proxied through Cloudflare (our Worker host) and forwarded to a third-party LLM inference provider (currently Groq; OpenRouter as fallback). Apple's iCloud (CloudKit) is used only if you enable iCloud sync. No other third parties are involved.</p>
+    <p>RoastMate AI integrates no analytics SDK and no advertising SDK. For the Vent / Feral cloud path, the request is proxied through Cloudflare (our Worker host) and forwarded to a third-party LLM inference provider (currently OpenRouter, which passes it to a hosting provider for the selected model). Apple's iCloud (CloudKit) is used automatically whenever you are signed in to iCloud, to sync your data to your own private iCloud database (see section 3). No other third parties are involved.</p>
 
     <h2>6. Children</h2>
     <p>RoastMate AI is rated 17+/18+ (IARC) for mature humor and sarcasm. It is not intended for children under 17.</p>
